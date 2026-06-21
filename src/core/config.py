@@ -1,4 +1,4 @@
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
     app_name: str = "Ghost Developer"
@@ -7,7 +7,6 @@ class Settings(BaseSettings):
     llm_api_key: str = "placeholder_key"
     repo_path: str = "/tmp/repo"
     
-    class Config:
-        env_file = ".env"
+    model_config = SettingsConfigDict(env_file=".env")
 
 settings = Settings()

@@ -5,7 +5,7 @@ class GitHubIssue(BaseModel):
     id: int
     number: int
     title: str
-    body: Optional[str]
+    body: Optional[str] = None
     state: str
 
 class WebhookPayload(BaseModel):
